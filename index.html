@@ -1,8 +1,21 @@
-this is crazy!
-<ul>
-  <li> 1 </li>
-  <li> 2 </li>
-</ul>
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+
+</html>
+
+<head>
+  <title>מתכונים</title>
+</head>
+<main>
+
+  <body>
+    <h1>ספר המתכונים של בר וסתיו</h1>
+    <div id="viewport">פה יהיה מתכון</div>
+    <button hx-get="recepies/cake.html" hx-target="#viewport">
+      עוגה
+    </button>
+  </body>
+</main>
 
 <script>
   async function fetchIndex() {
@@ -13,3 +26,5 @@ this is crazy!
 
   fetchIndex()
 </script>
+<script src="https://unpkg.com/htmx.org@2.0.2"
+  integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script>
