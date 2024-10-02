@@ -3,3 +3,13 @@ this is crazy!
   <li> 1 </li>
   <li> 2 </li>
 </ul>
+
+<script>
+  async function fetchIndex() {
+    const response = await fetch("index.json")
+    const index = await response.json()
+    console.log(index)
+  }
+
+  fetchIndex()
+</script>
