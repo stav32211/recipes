@@ -14,7 +14,7 @@
 
 
 <script type="text/babel">
-  async function getRecipeJson(name) {
+  async function getRecipe(name) {
     const recipe = await fetch(`recipes/${name}.json`).then(it => it.json())
     return recipe
   }
@@ -35,10 +35,10 @@
   function App() {
     return (
       <div>
-        <RecipeTitle/>
+        <RecipeTitle />
         <p>עכשיו רק צריך מתכונים</p>
       </div>
-    );
+    )
   }
 
   ReactDOM.render(<App />, document.getElementById('root'));
