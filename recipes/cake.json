@@ -1,0 +1,7 @@
+{
+    "name" : "cake",
+    "portions": [{"type":"amount","value": 2}, "מנות"],
+    "ingridiens": [
+        ["סוכר", {"type":"amount","value": 5}, "גרם"]
+    ]
+}

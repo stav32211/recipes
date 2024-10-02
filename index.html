@@ -6,25 +6,44 @@
 <head>
   <title>מתכונים</title>
 </head>
-<main>
 
-  <body>
-    <h1>ספר המתכונים של בר וסתיו</h1>
-    <div id="viewport">פה יהיה מתכון</div>
-    <button hx-get="recepies/cake.html" hx-target="#viewport">
-      עוגה
-    </button>
-  </body>
-</main>
 
-<script>
+<body id="body">
+  <div id="root"></div>
+</body>
+
+
+<script type="text/babel">
+  async function getRecipeJson(name) {
+    const recipe = await fetch(`recipes/${name}.json`).then(it => it.json())
+    return recipe
+  }
+
   async function fetchIndex() {
     const response = await fetch("index.json")
     const index = await response.json()
     console.log(index)
   }
 
-  fetchIndex()
+  function RecipeTitle(props) {
+    const title = "אתר המתכונים של בר וסתיו"
+    return (
+      <h1>{title}</h1>
+    )
+  }
+
+  function App() {
+    return (
+      <div>
+        <RecipeTitle/>
+        <p>עכשיו רק צריך מתכונים</p>
+      </div>
+    );
+  }
+
+  ReactDOM.render(<App />, document.getElementById('root'));
 </script>
-<script src="https://unpkg.com/htmx.org@2.0.2"
-  integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<!-- Include Babel for JSX -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
